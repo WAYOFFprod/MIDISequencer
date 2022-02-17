@@ -15,3 +15,8 @@ target 'MIDISequencer Mac' do
   platform :osx, '10.13'
   shared_pods
 end
+
+# target 'MusicTheorySwift' do
+#   pod 'MusicTheorySwift', '~> 1.3'
+#   shared_pods
+# end

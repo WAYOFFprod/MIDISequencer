@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		268337B1D546DAC8382D2318 /* libPods-MIDISequencer iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6D50D289CD4E5AC3EDDEB6 /* libPods-MIDISequencer iOS.a */; };
+		644BD6AA27BE867900458F1A /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 644BD6A927BE867900458F1A /* AudioKit */; };
+		6459533527BE838100FC2074 /* MusicTheory in Frameworks */ = {isa = PBXBuildFile; productRef = 6459533427BE838100FC2074 /* MusicTheory */; };
 		9E065C25D47744E94A9588FB /* libPods-MIDISequencer Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 759D833FA8BDC596091DEE58 /* libPods-MIDISequencer Mac.a */; };
 		B26B85421FC30230005B9D37 /* MIDISequencerVelocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B85411FC30230005B9D37 /* MIDISequencerVelocity.swift */; };
 		B26B85431FC3027A005B9D37 /* MIDISequencerVelocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B85411FC30230005B9D37 /* MIDISequencerVelocity.swift */; };
@@ -53,7 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				268337B1D546DAC8382D2318 /* libPods-MIDISequencer iOS.a in Frameworks */,
+				644BD6AA27BE867900458F1A /* AudioKit in Frameworks */,
+				6459533527BE838100FC2074 /* MusicTheory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +167,10 @@
 			dependencies = (
 			);
 			name = "MIDISequencer iOS";
+			packageProductDependencies = (
+				6459533427BE838100FC2074 /* MusicTheory */,
+				644BD6A927BE867900458F1A /* AudioKit */,
+			);
 			productName = "MIDISequencer iOS";
 			productReference = B2EAA1981F67DC7000B80D57 /* MIDISequencer.framework */;
 			productType = "com.apple.product-type.framework";
@@ -194,7 +200,7 @@
 		B2EAA18D1F67DC5C00B80D57 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					B2EAA1971F67DC7000B80D57 = {
@@ -218,6 +224,10 @@
 				Base,
 			);
 			mainGroup = B2EAA18C1F67DC5C00B80D57;
+			packageReferences = (
+				6459533327BE838100FC2074 /* XCRemoteSwiftPackageReference "MusicTheory" */,
+				644BD6A827BE867900458F1A /* XCRemoteSwiftPackageReference "AudioKit" */,
+			);
 			productRefGroup = B2EAA1991F67DC7000B80D57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -383,6 +393,7 @@
 			baseConfigurationReference = 136D59432716A2F940BB6A29 /* Pods-MIDISequencer iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -434,8 +445,12 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDISequencer-iOS";
@@ -456,6 +471,7 @@
 			baseConfigurationReference = 1AD080BBCE27B2EAB609061B /* Pods-MIDISequencer iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -501,14 +517,19 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDISequencer-iOS";
 				PRODUCT_NAME = MIDISequencer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -522,6 +543,7 @@
 			baseConfigurationReference = 3C08AC4183267F180B5501A3 /* Pods-MIDISequencer Mac.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -574,7 +596,11 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -595,6 +621,7 @@
 			baseConfigurationReference = 2D299E9223DC2FF6C9752E71 /* Pods-MIDISequencer Mac.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -641,14 +668,19 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDISequencer-Mac";
 				PRODUCT_NAME = MIDISequencer;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -686,6 +718,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		644BD6A827BE867900458F1A /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		6459533327BE838100FC2074 /* XCRemoteSwiftPackageReference "MusicTheory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cemolcay/MusicTheory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		644BD6A927BE867900458F1A /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 644BD6A827BE867900458F1A /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		6459533427BE838100FC2074 /* MusicTheory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6459533327BE838100FC2074 /* XCRemoteSwiftPackageReference "MusicTheory" */;
+			productName = MusicTheory;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B2EAA18D1F67DC5C00B80D57 /* Project object */;
 }

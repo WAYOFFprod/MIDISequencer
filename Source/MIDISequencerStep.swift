@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MusicTheorySwift
+import MusicTheory
 
 /// A step in a `MIDISequencerTrack` of `MIDISequencer`.
 public struct MIDISequencerStep: Codable {

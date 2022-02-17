@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MusicTheorySwift
+import MusicTheory
 
 /// `MIDISequencerArpeggiator`'s arpeggio style.
 public enum MIDISequencerArpeggio: Int, Codable {
